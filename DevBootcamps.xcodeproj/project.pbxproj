@@ -13,6 +13,7 @@
 		9248133B1D58D72400A81B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924813391D58D72400A81B74 /* Main.storyboard */; };
 		9248133D1D58D72400A81B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9248133C1D58D72400A81B74 /* Assets.xcassets */; };
 		924813401D58D72400A81B74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9248133E1D58D72400A81B74 /* LaunchScreen.storyboard */; };
+		924813481D58E04D00A81B74 /* BootcampAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924813471D58E04D00A81B74 /* BootcampAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9248133C1D58D72400A81B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9248133F1D58D72400A81B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		924813411D58D72400A81B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		924813471D58E04D00A81B74 /* BootcampAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootcampAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9248133C1D58D72400A81B74 /* Assets.xcassets */,
 				9248133E1D58D72400A81B74 /* LaunchScreen.storyboard */,
 				924813411D58D72400A81B74 /* Info.plist */,
+				924813471D58E04D00A81B74 /* BootcampAnnotation.swift */,
 			);
 			path = DevBootcamps;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				924813381D58D72400A81B74 /* LocationViewController.swift in Sources */,
 				924813341D58D72400A81B74 /* AppDelegate.swift in Sources */,
 				924813361D58D72400A81B74 /* FirstViewController.swift in Sources */,
+				924813481D58E04D00A81B74 /* BootcampAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

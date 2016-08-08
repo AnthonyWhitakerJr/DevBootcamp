@@ -17,11 +17,22 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     let locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 1000
     
+    /// Temporary variable
+    let addresses = [
+        "20433 Vía San Marino Cupertino, CA 95014",
+        "20650 Homestead Rd, Cupertino, CA 95014",
+        "11010 N De Anza Blvd, Cupertino, CA 95014"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
+        for address in getAddresses() {
+            addAnnotationForAddress(address)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -64,5 +75,37 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
             centerMapOnLocation(loc)
         }
     }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation.isKindOfClass(BootcampAnnotation) {
+            let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Default")
+            annotationView.pinTintColor = UIColor.cyanColor()
+            annotationView.animatesDrop = true
+            return annotationView
+        }
+        
+        return nil
+    }
+    
+    //TODO: Download addresses from sever/database
+    func getAddresses() -> [String] {
+        return addresses
+    }
+    
+    func addAnnotationForLocation(location: CLLocation) {
+        let bootcamp = BootcampAnnotation(coordinate: location.coordinate)
+        map.addAnnotation(bootcamp)
+    }
+    
+    func addAnnotationForAddress(address: String) {
+        CLGeocoder().geocodeAddressString(address) { (placemarks: [CLPlacemark]?, error: NSError?) in
+            if let marks = placemarks where !marks.isEmpty{
+                if let loc = marks[0].location {
+                    self.addAnnotationForLocation(loc)
+                }
+            }
+        }
+    }
+    
 }
 
